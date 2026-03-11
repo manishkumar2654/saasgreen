@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Book Appointment | Saas Clinic</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box}
+    :root{
+      --primary:#123c3a; --primary-light:#1f5a56; --accent:#c7a56a;
+      --text-dark:#142120; --text-medium:#4a5a58; --text-light:#75817f;
+      --shadow-soft:0 18px 40px -20px rgba(18,60,58,0.18); --shadow-card:0 24px 60px -24px rgba(18,60,58,0.18);
+    }
+    body{font-family:'Inter',sans-serif;background:linear-gradient(180deg,#fcfaf7 0%,#f6f3ee 45%,#fbfaf7 100%);color:var(--text-dark)}
+    .glass-premium{background:rgba(255,255,255,.72);backdrop-filter:blur(18px);border:1px solid rgba(255,255,255,.6);box-shadow:var(--shadow-soft)}
+    .glass-card{background:linear-gradient(180deg, rgba(255,255,255,.96), rgba(255,255,255,.82));border:1px solid rgba(18,60,58,.08);box-shadow:var(--shadow-card)}
+    .premium-surface{background:linear-gradient(180deg, rgba(255,255,255,.94), rgba(255,255,255,.86));border:1px solid rgba(18,60,58,.08);box-shadow:var(--shadow-card)}
+    .btn-primary{background:linear-gradient(135deg,var(--primary),var(--primary-light));color:#fff;padding:14px 30px;border-radius:999px;font-weight:700;display:inline-flex;align-items:center;gap:10px}
+    .section-deep{background:linear-gradient(135deg,#113633 0%,#184643 55%,#0f2f2d 100%)}
+  </style>
+</head>
+<body>
+
+ <!-- ==================== PREMIUM NAVBAR ==================== -->
+  <nav class="fixed top-0 left-0 right-0 z-50 glass-premium py-3">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between">
+
+        <a href="index.html" class="flex items-center gap-3">
+          <div class="relative">
+            <div class="w-12 h-12 rounded-2xl flex items-center justify-center shadow-lg pulse-heart"
+              style="background: linear-gradient(135deg, var(--primary), var(--accent));">
+               <img src="images/logo.png" alt="Saas Clinic Logo" class="h-10 w-auto">
+            </div>
+            <div class="absolute -top-1 -right-1 w-3 h-3 rounded-full border-2 border-white"
+              style="background: var(--accent);"></div>
+          </div>
+          <div>
+            <h3 class="font-bold text-[var(--text-dark)] text-lg">Saas Clinic</h3>
+            <p class="text-xs tracking-[0.18em] uppercase text-[var(--text-light)]">Because We Respect Life</p>
+          </div>
+        </a>
+
+        <div class="hidden lg:flex items-center gap-8">
+          <a href="index.html"
+            class="font-medium text-[var(--text-medium)] hover:text-[var(--primary)] transition-colors relative group">
+            Home
+            <span
+              class="absolute -bottom-1 left-0 w-0 h-0.5 rounded-full group-hover:w-full transition-all duration-300"
+              style="background: linear-gradient(to right, var(--accent), var(--primary));"></span>
+          </a>
+          <a href="about.html"
+            class="font-medium text-[var(--text-medium)] hover:text-[var(--primary)] transition-colors relative group">
+            About
+            <span
+              class="absolute -bottom-1 left-0 w-0 h-0.5 rounded-full group-hover:w-full transition-all duration-300"
+              style="background: linear-gradient(to right, var(--accent), var(--primary));"></span>
+          </a>
+          <a href="SAAS.html"
+            class="font-medium text-[var(--text-medium)] hover:text-[var(--primary)] transition-colors relative group">
+            SAAS
+            <span
+              class="absolute -bottom-1 left-0 w-0 h-0.5 rounded-full group-hover:w-full transition-all duration-300"
+              style="background: linear-gradient(to right, var(--accent), var(--primary));"></span>
+          </a>
+          <a href="Doctors.html"
+            class="font-medium text-[var(--text-medium)] hover:text-[var(--primary)] transition-colors relative group">
+            Doctors
+            <span
+              class="absolute -bottom-1 left-0 w-0 h-0.5 rounded-full group-hover:w-full transition-all duration-300"
+              style="background: linear-gradient(to right, var(--accent), var(--primary));"></span>
+          </a>
+          <a href="Contact.html"
+            class="font-medium text-[var(--text-medium)] hover:text-[var(--primary)] transition-colors relative group">
+            Contact
+            <span
+              class="absolute -bottom-1 left-0 w-0 h-0.5 rounded-full group-hover:w-full transition-all duration-300"
+              style="background: linear-gradient(to right, var(--accent), var(--primary));"></span>
+          </a>
+        </div>
+
+        <div class="hidden lg:flex items-center gap-4">
+          <a href="BookAppointment.html" class="btn-primary">
+            Book Appointment
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+            </svg>
+          </a>
+        </div>
+
+        <button class="lg:hidden p-2 rounded-lg hover:bg-black/5 transition" id="mobileMenuBtn">
+          <svg class="w-6 h-6 text-[var(--text-dark)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+          </svg>
+        </button>
+      </div>
+
+      <div id="mobileMenu" class="hidden lg:hidden mt-4 pb-4 border-t pt-4" style="border-color: var(--border);">
+        <div class="flex flex-col gap-3">
+          <a href="index.html" class="text-[var(--text-medium)] font-medium">Home</a>
+          <a href="about.html" class="text-[var(--text-medium)] font-medium">About</a>
+          <a href="SAAS.html" class="text-[var(--text-medium)] font-medium">SAAS</a>
+          <a href="Doctors.html" class="text-[var(--text-medium)] font-medium">Doctors</a>
+          <a href="Contact.html" class="text-[var(--text-medium)] font-medium">Contact</a>
+          <a href="BookAppointment.html" class="btn-primary mt-2 w-full">Book Appointment</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+  <!-- ==================== END NAVBAR ==================== -->
+
+  <section class="pt-32 pb-16 text-center">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <span class="font-semibold tracking-[0.18em] text-sm uppercase" style="color: var(--primary);">Book Appointment</span>
+      <h1 class="text-4xl lg:text-6xl font-black mt-4">Schedule Your Visit in a Premium, Simple Way</h1>
+      <p class="text-lg mt-6 text-[var(--text-medium)]">
+        Fill in your details and our team will contact you quickly to confirm your preferred time slot.
+      </p>
+    </div>
+  </section>
+
+  <section class="pb-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-2 gap-12 items-start">
+      <div class="section-deep rounded-[2rem] p-8 text-white">
+        <h2 class="text-4xl font-black mb-6">Why Book with Saas Clinic?</h2>
+        <div class="space-y-5">
+          <div class="bg-white/10 rounded-3xl p-5">
+            <h3 class="font-bold text-xl mb-2">Fast Confirmation</h3>
+            <p class="text-white/75">Our team reviews requests quickly and confirms your appointment without unnecessary delays.</p>
+          </div>
+          <div class="bg-white/10 rounded-3xl p-5">
+            <h3 class="font-bold text-xl mb-2">Trusted Specialists</h3>
+            <p class="text-white/75">Get connected to experienced doctors with focused consultation support.</p>
+          </div>
+          <div class="bg-white/10 rounded-3xl p-5">
+            <h3 class="font-bold text-xl mb-2">Smooth Experience</h3>
+            <p class="text-white/75">From booking to arrival, the journey is designed to feel simple, professional and reassuring.</p>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-2 gap-4 mt-8">
+          <div class="bg-white/10 rounded-2xl p-5">
+            <p class="text-3xl font-black">24/7</p>
+            <p class="text-white/70">Emergency Support</p>
+          </div>
+          <div class="bg-white/10 rounded-2xl p-5">
+            <p class="text-3xl font-black">10k+</p>
+            <p class="text-white/70">Patients Served</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="glass-card rounded-[2rem] p-8">
+        <h2 class="text-3xl font-black mb-6">Appointment Form</h2>
+        <form class="space-y-4">
+          <input type="text" placeholder="Full Name" class="w-full px-5 py-4 rounded-2xl border border-[rgba(18,60,58,0.12)] bg-white">
+          <input type="tel" placeholder="Phone Number" class="w-full px-5 py-4 rounded-2xl border border-[rgba(18,60,58,0.12)] bg-white">
+          <input type="email" placeholder="Email Address" class="w-full px-5 py-4 rounded-2xl border border-[rgba(18,60,58,0.12)] bg-white">
+          <select class="w-full px-5 py-4 rounded-2xl border border-[rgba(18,60,58,0.12)] bg-white">
+            <option>Select Department</option>
+            <option>Cardiology</option>
+            <option>Neurology</option>
+            <option>Orthopedics</option>
+            <option>Pulmonology</option>
+            <option>Sleep Medicine</option>
+            <option>Allergy Clinic</option>
+          </select>
+          <input type="date" class="w-full px-5 py-4 rounded-2xl border border-[rgba(18,60,58,0.12)] bg-white">
+          <textarea rows="4" placeholder="Additional Notes" class="w-full px-5 py-4 rounded-2xl border border-[rgba(18,60,58,0.12)] bg-white"></textarea>
+          <button type="submit" class="btn-primary w-full justify-center">Confirm Appointment</button>
+        </form>
+        <p class="text-sm text-center mt-5 text-[var(--text-light)]">We’ll contact you shortly to confirm your slot.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer class="pt-16 pb-8 text-white" style="background: linear-gradient(180deg, #0d2322 0%, #091716 100%);">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="border-t border-white/10 pt-6 text-white/45 text-sm flex flex-col md:flex-row justify-between gap-3">
+        <p>© 2024 Saas Clinic. All rights reserved.</p>
+        <p><a href="index.html">Home</a> • <a href="Contact.html">Contact</a> • <a href="Doctors.html">Doctors</a></p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
